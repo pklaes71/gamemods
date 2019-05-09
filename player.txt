@@ -1,0 +1,1389 @@
+country_decisions = {
+
+	realign_senate = {
+		potential = {
+			ai = no
+			government = imperium_republic
+		}
+		allow = {
+			OR = {
+				NOT = { military_party = 18 }
+				military_party = 30
+				NOT = { mercantile_party = 18 }
+				mercantile_party = 30	
+				NOT = { religious_party = 18 }
+				religious_party = 30	
+				NOT = { civic_party = 18 }
+				civic = 30
+				NOT = { populist_party = 18 }
+				populist_party = 30	
+			}	
+		}
+		effect = {
+			country_event = 20025
+			country_event = 20026
+			country_event = 20027
+			country_event = 20028
+			country_event = 20029			
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	first_army_and_better_leaders = {
+		potential = {
+			ai = no
+			NOT = { government = imperium_republic }
+		}
+		allow = {
+			NOT = { has_country_modifier = citizens_answer_the_call }
+		}
+		effect = {
+			country_event = 20240
+			country_event = 20085
+			country_event = 20107
+			add_country_modifier = {
+			name = "citizens_answer_the_call"
+			duration = 3650
+			}	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	build_a_grand_library_of_the_spirit = {
+		potential = {
+			NOT = { government = theocracy }
+			NOT = { is_civil_war_faction = yes }
+			NOT = { capital_scope = { has_province_modifier = grand_library }}
+		}
+		allow = {
+			religion = christianity			
+		}
+		effect = {
+			country_event = 20020	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}	
+	
+	build_a_grand_library_of_the_people = {
+		potential = {
+			NOT = { government = theocracy }
+			NOT = { is_civil_war_faction = yes }
+			NOT = { capital_scope = { has_province_modifier = grand_library }}
+		}
+		allow = {
+			num_of_cities = 6	
+		}
+		effect = {
+			country_event = 20020	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}	
+
+	build_a_grand_library_of_riches = {
+		potential = {
+			NOT = { government = theocracy }
+			NOT = { is_civil_war_faction = yes }
+			NOT = { capital_scope = { has_province_modifier = grand_library }}
+		}
+		allow = {
+			capital_scope = { trade_goods = gold }	
+		}
+		effect = {
+			country_event = 20020	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}	
+
+	build_a_grand_library_of_words = {
+		potential = {
+			NOT = { government = theocracy }
+			NOT = { is_civil_war_faction = yes }
+			NOT = { capital_scope = { has_province_modifier = grand_library }}
+		}
+		allow = {
+			capital_scope = { trade_goods = papyrus }	
+		}
+		effect = {
+			country_event = 20020	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}		
+	
+	the_druids_are_our_priests = {
+		potential = {
+			OR = {
+				religion = shamanism
+				religion animism
+				religion = tengriism
+			}
+			NOT = { government = theocracy }
+		}
+		allow = {
+			stability = 3
+			OR = {
+				owns = 715
+				owns = 719
+			}	
+		}
+		effect = {
+			country_event = 20042
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.45
+		}
+	}
+
+	rome_is_our_new_center_of_religion = {
+		potential = {
+			OR = {
+				religion = greek_pantheon
+				religion = egyptian_pantheon
+			}
+			NOT = { government = theocracy }
+		}
+		allow = {
+			stability = 3
+			owns = 93			
+		}
+		effect = {
+			country_event = 20040	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.45
+		}
+	}
+
+	we_are_greek_afterall = {
+		potential = {
+			religion = egyptian_pantheon
+			NOT = { government = theocracy }
+		}
+		allow = {
+			stability = 3
+			owns = 255	
+			owns = 142
+		}
+		effect = {
+			country_event = 20046
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.45
+		}
+	}	
+	
+	we_are_all_phoenician = {
+		potential = {
+			religion = phoenician_pantheon
+			NOT = { government = theocracy }
+		}
+		allow = {
+			stability = 3
+			owns = 220	
+			owns = 247
+			owns = 101
+		}
+		effect = {
+			country_event = 20041	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.45
+		}
+	}	
+
+	we_will_worship_the_one_true_god = {
+		potential = {
+			religion = zoroaster
+			NOT = { government = theocracy }
+		}
+		allow = {
+			stability = 3
+			owns = 221	
+			owns = 211
+			owns = 196
+		}
+		effect = {
+			country_event = 20043	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.45
+		}
+	}
+
+	we_will_listen_to_the_brahm = {
+		potential = {
+			religion = jainism
+			NOT = { government = theocracy }
+		}
+		allow = {
+			stability = 3
+			owns = 620	
+			owns = 339
+			owns = 304
+			owns = 330
+		}
+		effect = {
+			country_event = 20044
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.45
+		}
+	}
+	
+	our_religion_must_be_practiced_throughout_our_empire = {
+		potential = {
+			OR = {
+				religion = druidism
+				religion = roman_pantheon
+				religion = greek_pantheon
+				religion = judaism
+				religion = zoroaster
+				religion = brahmanism
+				religion = chinese_folk
+				religion = carthagian_pantheon
+			}
+			stability = 3
+		}
+		allow = {
+			any_province = {
+				owned_by = THIS
+				has_building = temple
+				population = 20
+				OR = {
+					NOT = { religion = THIS }
+					NOT = { religion = christianity }
+					NOT = { religion = judaism }
+				}
+			}
+		}
+		effect = {
+			country_event = 20008
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.75
+		}
+	}
+	
+	settle_veterans_on_new_land = {
+		potential = {
+			ai = no
+			war = no
+			republic = yes
+			stability = -1
+		}
+		allow = {
+			any_province = {
+				owned_by = THIS
+				NOT = {
+					population = 18
+				}	
+				
+			}
+		}
+		effect = {
+			country_event = 20100
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.45
+		}
+	}	
+
+	convert_to_christianity = {
+		potential = {
+			year = 756
+			NOT = { religion = christianity }
+			NOT = { government = theocracy }
+		}
+		allow = {
+			is_religion_enabled = christianity
+			capital_scope = { religion = christianity } 	
+		}
+		effect = {
+			country_event = 20202	
+			country_event = 20113
+			country_event = 20167
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.20
+		}
+	}
+	
+	permit_christian_missionaries_in_capital = {
+		potential = {
+			year = 755
+			NOT = { religion = christianity }
+			NOT = { government = theocracy }
+			NOT = { capital_scope = { religion = christianity }}
+		}
+		allow = {
+			is_religion_enabled = christianity
+			NOT = { has_country_modifier = christian_missionaries }
+			any_province = {
+				owned_by = THIS
+				religion = christianity
+			} 	
+		}
+		effect = {
+			country_event = 20282	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.35
+		}
+	}	
+	
+	make_a_gift_of_elephants = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			has_country_modifier = we_have_allies
+		}
+		allow = {
+			war = no
+			NOT = { has_country_modifier = gift_of_elephants }
+			any_province = {
+				owned_by = THIS
+				trade_goods = elephants 
+			}
+		}
+		effect = {
+			country_event = 20154
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+		
+	make_a_gift_of_horses = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			has_country_modifier = we_have_allies
+		}
+		allow = {
+			war = no
+			NOT = { has_country_modifier = gift_of_horses }
+			any_province = {
+				owned_by = THIS
+				trade_goods = horses 
+			}
+		}
+		effect = {
+			country_event = 20155
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	make_a_gift_of_iron = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			has_country_modifier = we_have_allies
+		}
+		allow = {
+			war = no
+			NOT = { has_country_modifier = gift_of_iron }
+			any_province = {
+				owned_by = THIS
+				trade_goods = iron 
+			}
+		}
+		effect = {
+			country_event = 20156
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	form_Troy = {
+		potential = {
+			and = {
+				ai = no
+				not = { exists = TRO } 
+				not = { exists = TRY } 
+				has_civil_war = no
+				tag = PER
+			}
+		}
+		allow = {
+			  owns = 156
+			}
+		effect = {
+			change_tag = TRO
+			stability = 3
+			country_event = 20021
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	form_Troy = {
+		potential = {
+			and = {
+				ai = no
+				not = { exists = TRO } 
+				not = { exists = TRY } 
+				not = { exists = PER } 
+				has_civil_war = no
+				tag = CUC
+			}
+		}
+		allow = {
+			  owns = 156
+			}
+		effect = {
+			capital = 156
+			add_core = 156
+			stability = 3
+			change_tag = TRO
+			country_event = 20021
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	form_Judea = {
+		potential = {
+			and = {
+				ai = no
+				not = { exists = JUD } 
+				religion = judaism
+			}
+		}
+		allow = {
+			  owns = 221
+		}
+		effect = {
+			change_tag = JUD
+			culture = jewish
+			capital = 221
+			stability = 3
+			country_event = 20021
+
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	form_Byzantium = {
+		potential = {
+			and = {
+				year = 820
+				tag = ROM
+				not = { exists = BZT } 
+				capital = 134
+				war = no
+				has_civil_war = no
+			}
+		}
+		allow = {
+			owns = 134
+		}
+		effect = {
+			change_tag = BZT
+			stability = 3
+
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	
+	move_capital_to_Antioch = {
+		potential = {
+			and = {
+				ai = no
+				religion = christianity
+				NOT = { capital = 190 } 
+				NOT = { has_country_modifier = we_are_antiochan }
+			}	
+		}
+		allow = {
+			owns = 190
+			war = no	
+		}
+		effect = {
+			capital = 190
+			add_core = 190
+			country_event = 20239
+
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	convert_from_military_tribe = {
+		potential = {
+			ai = no
+			government = military_tribe
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			country_event = 20115	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.10
+		}
+	}
+
+	convert_from_religious_tribe = {
+		potential = {
+			ai = no
+			government = religious_tribe
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			country_event = 20116		
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.10
+		}
+	}
+
+	convert_from_civic_tribe = {
+		potential = {
+			ai = no
+			government = civic_tribe
+		}
+		allow = {
+			war = no		
+		}
+		effect = {
+			country_event = 20117
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.10
+		}
+	}	
+	
+	convert_from_trade_tribe = {
+		potential = {
+			ai = no
+			government = trade_tribe
+		}
+		allow = {
+			war = no	
+		}
+		effect = {
+			country_event = 20118
+				
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.10
+		}
+	}
+	
+	convert_from_dictatorship = {
+		potential = {
+			ai = no
+			government = dictatorship
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			country_event = 20115	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.10
+		}
+	}
+
+	convert_from_despotic_monarchy = {
+		potential = {
+			ai = no
+			government = despotic_monarchy
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			country_event = 20115	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.10
+		}
+	}	
+	
+	convert_from_federal_monarchy = {
+		potential = {
+			ai = no
+			government = federal_monarchy
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			country_event = 20115	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.10
+		}
+	}
+
+	convert_from_aristocratic_monarchy = {
+		potential = {
+			ai = no
+			government = aristocratic_monarchy
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			country_event = 20115	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.10
+		}
+	}	
+	
+	convert_from_regular_impire = {
+		potential = {
+			ai = no
+			government = imperium
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			country_event = 20115	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.10
+		}
+	}	
+	
+	encourage_our_ally_to_become_military_republic = {
+		potential = {
+			ai = no
+			government = imperium_republic	
+			has_country_modifier = we_have_allies
+		}
+		allow = {
+			war = no
+			NOT = { has_country_modifier = encourage_military_republic }
+				
+		}
+		effect = {
+			country_event = 20173
+			any_country = {
+				limit = {
+					alliance_with = THIS
+					government = military_tribe
+				}
+				country_event = 20119
+			}	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	encourage_our_ally_to_convert_from_religious_tribe = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			has_country_modifier = we_have_allies
+		}
+		allow = {
+			war = no
+			NOT = { has_country_modifier = encourage_aristocratic_republic }
+				
+		}
+		effect = {
+			country_event = 20174
+			any_country = {
+				limit = {
+					alliance_with = THIS
+					government = religious_tribe
+				}
+				country_event = 20120
+			}	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	encourage_our_ally_to_convert_from_civic_tribe = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			has_country_modifier = we_have_allies	
+		}
+		allow = {
+			war = no
+			NOT = { has_country_modifier = encourage_oligarchic_republic1 }
+				
+		}
+		effect = {
+			country_event = 20175
+			any_country = {
+				limit = {
+					alliance_with = THIS
+					government = civic_tribe
+				}
+				country_event = 20121
+			}	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+	
+	encourage_our_ally_to_convert_from_trade_tribe = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			has_country_modifier = we_have_allies	
+		}
+		allow = {
+			war = no
+			NOT = { has_country_modifier = encourage_oligarchic_republic2 }
+				
+		}
+		effect = {
+			country_event = 20176
+			any_country = {
+				limit = {
+					alliance_with = THIS
+					government = trade_tribe
+				}
+				country_event = 20122
+			}	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	encourage_our_ally = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			has_country_modifier = we_have_allies			
+		}
+		allow = {
+			war = no
+			NOT = { has_country_modifier = encourage_our_allies }
+				
+		}
+		effect = {
+			country_event = 20188
+	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	defend_faith = {
+		potential = {
+			OR = { 
+				government = theocracy
+				ai = no
+				ai = yes
+			}
+		}
+		allow = {
+			NOT = { has_country_modifier = defender_of_faith }
+			OR = {
+				has_law = religious_class
+				has_law = emperial_focus
+				active_mission = protect_religious_minority
+			}
+			stability = 3
+			
+		}
+		effect = {
+			country_event = 20196
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.50
+		}
+	}
+	
+	seperate_politics_from_religion = {
+		potential = {
+			OR = { 
+				ai = no
+				ai = yes
+			}
+			NOT = { government = theocracy }
+		}
+		allow = {
+			NOT = { has_country_modifier = open_society }
+			OR = {
+				has_law = political_class
+				has_law = emperial_focus
+				has_law = internal_focus
+			}
+			stability = 3
+			
+		}
+		effect = {
+			country_event = 20197
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.50
+		}
+	}
+	
+	teach_our_youth_the_faith = {
+		potential = {
+			year = 754
+			religion = christianity 
+		}
+		allow = {
+			any_character = {
+				age = 10
+				NOT = { age = 16 }
+				NOT = { religion = christianity }
+			}	
+		}
+		effect = {
+			country_event = 20204	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	missionary_nation = {
+		potential = {
+			religion = christianity
+		}
+		allow = {
+			NOT = { has_country_modifier = missionary_activity }
+			has_law = missionary_class
+		}
+		effect = {
+			country_event = 20211
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	encourage_civil_war = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			NOT = { has_country_modifier = meddler }
+			NOT = { has_country_modifier = prep_for_war }
+		}
+		allow = {
+			war = no
+			treasury = 50000
+			OR = {
+				has_law = emperial_focus
+				ruler = { party = military_party }
+			}
+		}
+		effect = {
+			country_event = 20214
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	help_our_fellow_christians_defend_themselves = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			religion = christianity
+		}
+		allow = {
+			any_neighbor_country = {
+				has_civil_war = yes
+				religion = christianity
+				NOT = { is_civil_war_faction = yes }
+				NOT = { treasury = 3000 }
+				NOT = { 
+					civil_war_faction = {
+						religion = christianity
+					}
+				}
+			}		
+		}
+		effect = {
+			country_event = 20238	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	support_a_rebellion = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			NOT = { has_country_modifier = we_are_shifty }
+		}
+		allow = {
+			treasury = 5000
+			has_law = emperial_focus
+			war = no
+			any_neighbor_country = {
+				ai = yes
+				has_civil_war = no
+				num_of_cities = 40
+				NOT = { is_civil_war_faction = yes }
+				NOT = { alliance_with = THIS }
+				NOT = { 
+					OR = {
+						has_country_modifier = the_people_want_their_freedoms1
+						has_country_modifier = the_people_want_their_freedoms2
+					}
+				}
+			}		
+		}
+		effect = {
+			country_event = 20249	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	unhappy_governors = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			war = no
+			num_of_cities = 18
+		}
+		allow = {
+			NOT = { has_country_modifier = warscore_sucks }
+			any_neighbor_country = {
+				has_civil_war = no
+				NOT = { relation = { who = THIS value = -100 }}
+				NOT = { alliance_with = THIS }
+				num_of_cities = 8
+			}		
+		}
+		effect = {
+			country_event = 20283	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	support_ovethrow_of_young_ruler = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			NOT = { has_country_modifier = we_are_shifty }
+		}
+		allow = {
+			treasury = 5000
+			has_law = emperial_focus
+			war = no
+			any_neighbor_country = {
+				ai = yes
+				has_civil_war = no
+				num_of_cities = 20
+				ruler = { NOT = { age = 16 }}
+				NOT = { is_civil_war_faction = yes }
+				NOT = { alliance_with = THIS }
+				NOT = { 
+					OR = {
+						has_country_modifier = the_people_want_their_freedoms1
+						has_country_modifier = the_people_want_their_freedoms2
+					}
+				}
+			}		
+		}
+		effect = {
+			country_event = 20409	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	factions_agitate_for_war = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			war = no
+		}
+		allow = {
+			NOT = { has_country_modifier = agitators }
+			any_neighbor_country = {
+				ai = yes
+				num_of_cities = 8
+				has_civil_war = no
+				relation = { who = THIS value = -100 }
+				NOT = { alliance_with = THIS }
+			}		
+		}
+		effect = {
+			country_event = 20486	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	propaganda = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			war = no
+		}
+		allow = {
+			NOT = { stability = 2 }	
+			treasury = 600	
+		}
+		effect = {
+			stability = 2
+			treasury = -500	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	build_military_academies = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			war = no
+		}
+		allow = {
+			capital_scope = { has_building = academy }
+			NOT = { has_country_flag = military_academies }
+		}
+		effect = {
+			set_country_flag = military_academies	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	military_districts = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			war = no
+		}
+		allow = {
+			num_of_cities = 115
+			NOT = { has_country_flag = military_districts }
+		}
+		effect = {
+			set_country_flag = military_districts	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	national_reserve = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			war = no
+		}
+		allow = {
+			num_of_cities = 165
+			NOT = { has_country_flag = national_reserve }
+		}
+		effect = {
+			set_country_flag = national_reserve	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	corps_of_engineers = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			war = no
+		}
+		allow = {
+			num_of_cities = 170
+			NOT = { has_country_flag = corps_of_engineers }
+		}
+		effect = {
+			set_country_flag = corps_of_engineers	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	fund_a_civil_war = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			war = no
+			num_of_cities = 24
+			treasury = 11000
+		}
+		allow = {
+			any_neighbor_country = {
+				has_civil_war = no
+				has_country_modifier = governors_are_prickly
+				num_of_cities = 6
+			}		
+		}
+		effect = {
+			country_event = 20568	
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+	
+	weaken_a_neighbor = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			has_country_modifier = citizens_answer_the_call
+		}
+		allow = {
+			war = no
+			any_neighbor_country = {
+				num_of_cities = 6
+				OR = {
+					has_civil_war = no 
+					is_civil_war_faction = no
+				}
+				NOT = { num_of_cities = 10 }
+				NOT = { alliance_with = THIS }
+			}
+		}
+		effect = {
+			country_event = 20587
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+
+	make_a_gift_of_wood = {
+		potential = {
+			ai = no
+			government = imperium_republic
+			has_country_modifier = we_have_allies
+		}
+		allow = {
+			war = no
+			NOT = { has_country_modifier = gift_of_wood }
+			any_province = {
+				owned_by = THIS
+				trade_goods = wood 
+			}
+		}
+		effect = {
+			country_event = 20589
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}		
+	
+	
+
+
+}
+	
+	
+
+

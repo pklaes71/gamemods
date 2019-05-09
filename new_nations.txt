@@ -1,0 +1,1292 @@
+# Parthia
+country_event = {
+
+	id = 1050
+
+	trigger = {
+		not = { exists = PAR }
+		not = { has_country_flag = parthian_nation }
+		owns = 205		# Aspadana
+		owns = 206		# Paraitacene
+		owns = 207		# Hyrcania
+		owns = 208		# Parthia
+		owns = 209		# Tabae
+		owns = 210		# Carmania
+		or = {
+			or = {
+				207 = {
+					not = { primary_culture = this }
+					or = {
+						has_governor = no
+						and = {
+							has_governor = yes
+							governor_scope = {
+								or = {
+									not = { military = 2 }
+									traits = maniac
+									traits = incapable
+									traits = dumb
+									traits = foolish
+									traits = coward
+								}
+							}
+						}
+					}
+				}
+				208 = {
+					not = { primary_culture = this }
+					or = {
+						has_governor = no
+						and = {
+							has_governor = yes
+							governor_scope = {
+								or = {
+									not = { military = 2 }
+									traits = maniac
+									traits = incapable
+									traits = dumb
+									traits = foolish
+									traits = coward
+								}
+							}
+						}
+					}
+				}
+				209 = {
+					not = { primary_culture = this }
+					or = {
+						has_governor = no
+						and = {
+							has_governor = yes
+							governor_scope = {
+								or = {
+									not = { military = 2 }
+									traits = maniac
+									traits = incapable
+									traits = dumb
+									traits = foolish
+									traits = coward
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		}
+	}
+
+	mean_time_to_happen = {
+	
+		days = 10
+
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+		modifier = {
+			factor = 0.9
+			has_civil_war = yes
+		}
+	}
+
+	title = "EVTNAME1050"
+	desc = "EVTDESC1050"
+
+	option = {
+		name = "EVTOPTA1050"					# I should have seen this coming
+		PAR = {
+			add_core = 200
+			add_core = 201
+			add_core = 204
+			add_core = 205
+			add_core = 206
+			add_core = 207
+			add_core = 208
+			add_core = 209
+			add_core = 210
+			add_core = 211 
+			add_core = 212
+		}
+		205 = { secede_province = PAR }
+		206 = { secede_province = PAR }
+		207 = { secede_province = PAR }
+		208 = { secede_province = PAR }
+		209 = { secede_province = PAR }
+		210 = { secede_province = PAR }
+		stability = -1
+		set_country_flag = parthian_nation
+		PAR = { country_event = 20292 }
+	}
+}
+
+# Judea
+country_event = {
+
+	id = 1051
+
+	trigger = {
+		not = { stability = 0 }
+		not = { exists = JUD }
+		owns = 221		# Judea
+		not = { has_country_flag = hasmonean_nation }
+		221 = {
+			religion = judaism
+			not = { primary_culture = this }
+			not = { culture_group = this }
+			not = { religion = this }
+		}
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		}
+	}
+
+	mean_time_to_happen = {
+
+		days = 10
+	
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 0.8
+			ruler = { not = { popularity = 30 } }
+		}
+		modifier = {
+			factor = 0.8
+			ruler = { not = { popularity = 20 } }
+		}
+		modifier = {
+			factor = 0.8
+			ruler = { not = { popularity = 10 } }
+		}
+		modifier = {
+			factor = 1.2
+			ruler = { popularity = 90 }
+		}
+		modifier = {
+			factor = 1.2
+			ruler = { popularity = 80 }
+		}
+		modifier = {
+			factor = 1.2
+			ruler = { popularity = 70 }
+		}
+	}
+
+	title = "EVTNAME1051"
+	desc = "EVTDESC1051"
+
+	option = {
+		name = "EVTOPTA1051"					# Let them go then!	
+		set_country_flag = hasmonean_nation
+		JUD = { add_core = 221 }		
+		221 = { secede_province = JUD }
+		JUD = { country_event = 20292 }
+	}
+}
+
+# Numidia
+country_event = {
+
+	id = 1052
+
+	trigger = {
+		not = { exists = NUM }
+		not = { has_country_flag = numidian_nation }
+		owns = 249		# Numidia
+		owns = 251		# Massyli
+		owns = 252		# Taladusii
+		owns = 254		# Massaesyli
+		or = {
+			249 = {
+				has_governor = no
+				not = { primary_culture = this }
+			}
+			251 = {
+				not = { primary_culture = this }
+				has_governor = no
+			}
+			252 = {
+				not = { primary_culture = this }
+				has_governor = no
+			}
+			254 = {
+				not = { primary_culture = this }
+				has_governor = no
+			}
+		}
+		year = 554
+		ruler = { not = { military = 5 } }
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		}
+	}
+
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1052"
+	desc = "EVTDESC1052"
+
+	option = {
+		name = "EVTOPTA1052"					# Let them be for now...
+		set_country_flag = numidian_nation
+		NUM = {
+			add_core = 249
+			add_core = 251
+			add_core = 252
+			add_core = 254
+		}		
+		249 = { secede_province = NUM }
+		251 = { secede_province = NUM }
+		252 = { secede_province = NUM }
+		254 = { secede_province = NUM }
+		NUM = { country_event = 20292 }
+	}
+	option = {
+		name = "EVTOPTB1052"					# Refuse to release them
+		set_country_flag = numidian_nation
+		stability = -2
+	}
+}
+
+country_event = {
+
+	id = 1053
+
+	trigger = {
+		TAG = PAR
+		ruler = {
+			military = 0 
+		}
+		NOT = { has_country_flag = parthian_horde }
+		any_neighbor_country = {
+			has_country_flag = parthian_nation
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "EVTNAME1053"
+	desc = "EVTDESC1053"
+
+
+	immediate = {
+		set_country_flag = parthian_horde
+	}
+
+	option = {
+		name = "EVTOPTA1053"
+		ruler = {
+			horse_archers = THIS
+			horse_archers = THIS
+			horse_archers = THIS
+			horse_archers = THIS
+			cavalry = THIS
+			cavalry = THIS
+			cavalry = THIS
+			cavalry = THIS
+			heavy_infantry = THIS
+			heavy_infantry = THIS
+			heavy_infantry = THIS
+			heavy_infantry = THIS
+			archers = THIS
+			archers = THIS
+			archers = THIS
+			archers = THIS
+		}
+	}
+}
+
+country_event = {
+
+	id = 1054
+	trigger = {
+		NOT = { exists = CYR }
+		NOT = { has_country_flag = cyrenaica_nation }
+		owns = 233
+		owns = 234
+		owns = 235
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		} 
+	}
+	
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.5
+			ruler = {
+				NOT = { age = 16}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1054"
+	desc = "EVTDESC1054"
+
+
+	option = {
+		name = "EVTOPTA1054"					# Let them be for now...
+		set_country_flag = cyrenaica_nation
+		CYR = {
+			add_core = 233
+			add_core = 234
+			add_core = 235
+		}		
+		233 = { secede_province = CYR }
+		234 = { secede_province = CYR }
+		235 = { secede_province = CYR }
+		CYR = { country_event = 20292 }
+	}
+}
+
+country_event = {
+
+	id = 1055
+	trigger = {
+		NOT = { exists = GAL }
+		owns = 154
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.5
+			ruler = {
+				NOT = { age = 16}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1055"
+	desc = "EVTDESC1055"
+
+
+	option = {
+		name = "EVTOPTA1055"					# Let them be for now...
+		GAL = {
+			add_core = 154
+		}		
+		154 = { secede_province = GAL }
+		GAL = { country_event = 20292 }
+	}
+}
+
+country_event = {
+
+	id = 1056
+	trigger = {
+		NOT = { exists = CAP }
+		NOT = { has_country_flag = cappadocia_nation }
+		owns = 153
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		} 
+	}
+	
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.5
+			ruler = {
+				NOT = { age = 16}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1056"
+	desc = "EVTDESC1056"
+
+
+	option = {
+		name = "EVTOPTA1056"					# Let them be for now...
+		set_country_flag = cappadocia_nation
+		CAP = {
+			add_core = 153
+		}		
+		153 = { secede_province = CAP }
+		CAP = { country_event = 20292 }
+	}
+}
+
+country_event = {
+
+	id = 1057
+	trigger = {
+		NOT = { exists = SOP }
+		NOT = { has_country_flag = sophene_nation }
+		owns = 188
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		} 
+	}
+	
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.5
+			ruler = {
+				NOT = { age = 16}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1057"
+	desc = "EVTDESC1057"
+
+
+	option = {
+		name = "EVTOPTA1056"					# Let them be for now...
+		set_country_flag = sophene_nation
+		SOP = {
+			add_core = 188
+		}		
+		188 = { secede_province = SOP }
+		SOP = { country_event = 20292 }
+	}
+}
+
+
+country_event = {
+
+	id = 1058
+	trigger = {
+		NOT = { exists = COR }
+		NOT = { has_country_flag = corduene_nation }
+		owns = 194
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		} 
+	}
+	
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.5
+			ruler = {
+				NOT = { age = 16}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1058"
+	desc = "EVTDESC1058"
+
+
+	option = {
+		name = "EVTOPTA1058"					# Let them be for now...
+		set_country_flag = corduene_nation
+		COR = {
+			add_core = 194
+		}		
+		194 = { secede_province = COR }
+		COR = { country_event = 20292 }
+	}
+}
+
+country_event = {
+
+	id = 1059
+	trigger = {
+		NOT = { exists = PAP }
+		NOT = { has_country_flag = paphlagonia_nation }
+		owns = 149
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		} 
+	}
+	
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.5
+			ruler = {
+				NOT = { age = 16}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1059"
+	desc = "EVTDESC1059"
+
+
+	option = {
+		name = "EVTOPTA1059"					# Let them be for now...
+		set_country_flag = paphlagonia_nation
+		PAP = {
+			add_core = 149
+		}		
+		149 = { secede_province = PAP }
+		PAP = { country_event = 20292 }
+	}
+}
+
+country_event = {
+
+	id = 1094
+	trigger = {
+		NOT = { exists = LYC }
+		NOT = { has_country_flag = lycian_nation }
+		owns = 159
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.5
+			ruler = {
+				NOT = { age = 16}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1094"
+	desc = "EVTDESC1094"
+
+
+	option = {
+		name = "EVTOPTA1094"					# Let them be for now...
+		set_country_flag = lycian_nation
+		LYC = {
+			add_core = 159
+		}		
+		159 = { secede_province = LYC }
+		LYC = { country_event = 20292 }
+	}
+}
+
+country_event = {
+
+	id = 1095
+	trigger = {
+		NOT = { exists = COM }
+		NOT = { has_country_flag = commagene_nation }
+		owns = 189
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		} 
+	}
+	
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.5
+			ruler = {
+				NOT = { age = 16}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1095"
+	desc = "EVTDESC1095"
+
+
+	option = {
+		name = "EVTOPTA1095"					# Let them be for now...
+		set_country_flag = commagene_nation
+		COM = {
+			add_core = 189
+		}		
+		189 = { secede_province = COM }
+		COM = { country_event = 20292 }
+	}
+}
+
+country_event = {
+
+	id = 1096
+	trigger = {
+		NOT = { exists = OSR }
+		NOT = { has_country_flag = osroene_nation }
+		owns = 193
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		} 
+	}
+	
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.5
+			ruler = {
+				NOT = { age = 16}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1096"
+	desc = "EVTDESC1096"
+
+
+	option = {
+		name = "EVTOPTA1096"					# Let them be for now...
+		set_country_flag = osroene_nation
+		OSR = {
+			add_core = 193
+		}		
+		193 = { secede_province = OSR }
+		OSR = { country_event = 20292 }
+	}
+}
+
+country_event = {
+
+	id = 1097
+	trigger = {
+		NOT = { exists = ALB }
+		NOT = { has_country_flag = albania_nation }
+		owns = 181
+		owns = 182
+		owns = 183
+		OR = {
+			has_civil_war = yes 
+			is_civil_war_faction = yes
+		} 
+	}
+	
+	mean_time_to_happen = {
+
+		days = 10
+
+		modifier = {
+			factor = 0.5
+			ruler = {
+				NOT = { age = 16}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			war = yes
+		}
+		modifier = {
+			factor = 0.6
+			year = 604
+		}
+		modifier = {
+			factor = 0.6
+			year = 654
+		}
+		modifier = {
+			factor = 0.6
+			year = 704
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			ruler = { military = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.9
+			not = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.2
+			stability = 2
+		}
+	}
+
+	title = "EVTNAME1097"
+	desc = "EVTDESC1097"
+
+
+	option = {
+		name = "EVTOPTA1097"					# Let them be for now...
+		set_country_flag = albania_nation
+		ALB = {
+			add_core = 181
+			add_core = 182
+			add_core = 183
+		}		
+		181 = { secede_province = ALB }
+		182 = { secede_province = ALB }
+		183 = { secede_province = ALB }
+		ALB = { country_event = 20292 }
+	}
+}

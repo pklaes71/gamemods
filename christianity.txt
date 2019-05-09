@@ -1,0 +1,2172 @@
+province_event = {
+
+	id = 20070
+	
+	trigger = {
+		year = 758
+		is_religion_enabled = christianity	
+		any_neighbor_province = { religion = christianity }
+		OR = {
+			religion = greek_pantheon
+			religion = roman_pantheon
+			religion = druidism
+			religion = shamanism
+			religion = carthaginian_pantheon
+			religion = phoenician_pantheon
+			religion = egyptian_pantheon
+		}
+		NOT = {
+			owner = { religion = christianity }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		
+		modifier = {
+			factor = 0.5
+			owner = { war = no }	
+		}
+		modifier = {
+			factor = 0.33
+			governor_scope = { character_religion = christianity }	
+		}
+		modifier = {
+			factor = 0.165
+			governor_scope = { character_religion = christianity }	
+			owner = { war = no }
+		}
+
+	}
+
+	title = "shall_we_convert"
+	desc = "shall_we_convert"
+
+	option = {
+		name = "shall_we_convert"
+		random = {
+			chance = 30
+			religion = christianity	
+		}	
+	}
+	
+}
+
+country_event = {
+
+	id = 20113
+	
+	is_triggered_only = yes
+
+	title = "converts_to_state_religion"
+	
+	desc = "converts_to_state_religion"
+	
+	option = {
+		name = "converts_to_state_religion"	
+		any_character = {
+			limit = {
+				age = 16
+				NOT = {
+					OR = { 
+						character_religion = christianity
+						character_religion = judaism 
+					}
+				}
+			}
+			random = {
+				chance = 50
+				character_religion = christianity
+			}	
+		}
+	}	
+
+}
+
+country_event = {
+
+	id = 20126
+	
+	trigger = {
+		year = 756
+		tag = GAL
+		NOT = { religion = christianity}
+		NOT = { government = theocracy }
+	}	
+
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
+	title = "conversion of Galatians"
+	desc = "conversion of Galatians"
+
+	option = {
+		name = "conversion of Galatians"	
+		religion = christianity
+		ruler = { character_religion = christianity }
+		capital_scope = { 
+			religion = christianity
+			civilzation_value = 80
+		}	
+		country_event = 20202	
+		country_event = 20113
+		country_event = 20167
+	}
+}
+
+country_event = {
+
+	id = 20203
+	
+	trigger = {
+		year = 756
+		tag = CYR
+		NOT = { religion = christianity}
+		NOT = { government = theocracy }
+	}	
+
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
+	title = "conversion of cyrene"
+	desc = "conversion of cyrene"
+
+	option = {
+		name = "conversion of cyrene"	
+		religion = christianity
+			ruler = { religion = christianity }
+			capital_scope = { 
+				religion = christianity 
+				civilzation_value = 80
+			}	
+			country_event = 20202	
+			country_event = 20113
+			country_event = 20167
+	}
+}
+
+country_event = {
+
+	id = 20127
+	
+	trigger = {
+		year = 756
+		tag = ARM
+		NOT = { religion = christianity}
+		NOT = { government = theocracy }
+	}	
+
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
+	title = "conversion of Armenians"
+	desc = "conversion of Armenians"
+
+	option = {
+		name = "conversion of Armenians"	
+		religion = christianity
+			ruler = { religion = christianity }
+			capital_scope = { 
+				religion = christianity
+				civilzation_value = 80
+			}	
+			country_event = 20202	
+			country_event = 20113
+			country_event = 20167
+	}
+}
+
+province_event = {
+
+	id = 20128
+	
+	trigger = {
+		year = 754	
+		province_id = 154
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20169
+	
+	trigger = {
+		year = 754	
+		province_id = 329
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20170
+	
+	trigger = {
+		year = 754	
+		province_id = 211
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20129
+	
+	trigger = {
+		year = 754	
+		province_id = 190
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20130
+	
+	trigger = {
+		year = 754	
+		province_id = 234
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20131
+	
+	trigger = {
+		year = 754	
+		province_id = 220
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20132
+	
+	trigger = {
+		year = 754	
+		province_id = 219
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20133
+	
+	trigger = {
+		year = 754	
+		province_id = 707
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20134
+	
+	trigger = {
+		year = 754	
+		province_id = 140
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20135
+	
+	trigger = {
+		year = 754	
+		province_id = 248
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20140
+	
+	trigger = {
+		year = 754	
+		is_religion_enabled = christianity	
+		owner = { religion = christianity }
+		any_neighbor_province = { religion = christianity }
+		OR = {
+			religion = greek_pantheon
+			religion = roman_pantheon
+			religion = druidism
+			religion = shamanism
+			religion = carthaginian_pantheon
+			religion = phoenician_pantheon
+			religion = egyptian_pantheon
+		}		
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		
+		modifier = {
+			factor = 0.5
+			owner = { war = no }
+		}
+		modifier = {
+			factor = 0.33
+			owner = { government = theocracy }	
+		}
+		modifier = {
+			factor = 0.33
+			governor_scope = { character_religion = christianity }	
+		}
+		modifier = {
+			factor = 0.165
+			governor_scope = { character_religion = christianity }	
+			owner = { war = no }
+		}
+
+	}
+
+	title = "shall_we_convert"
+	desc = "shall_we_convert"
+
+	option = {
+		name = "shall_we_convert"
+		random_list = {
+			55 = { 
+				religion = christianity
+				civilzation_value = 35
+			}
+			45 = { create_revolt = 10 }	
+		}	
+	}
+	
+}
+
+province_event = {
+
+	id = 20141
+	
+	trigger = {
+		year = 754
+		is_religion_enabled = christianity	
+		owner = { religion = christianity } 
+		OR = {
+			religion = animism
+			religion = tengriism
+			religion = african_folk
+			religion = arabian_folk
+			religion = judaism
+			religion = zoroaster
+			religion = brahmanism
+			religion = jainism
+			religion = buddhism
+			religion = chinese_folk
+			religion = korean_folk
+			religion = japanese_folk
+			religion = viet_folk
+		}		
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		
+		modifier = {
+			factor = 0.5
+			owner = { war = no }
+		}
+		modifier = {
+			factor = 0.33
+			owner = { government = theocracy }	
+		}
+		modifier = {
+			factor = 0.33
+			governor_scope = { character_religion = christianity }	
+		}
+		modifier = {
+			factor = 0.165
+			governor_scope = { character_religion = christianity }	
+			owner = { war = no }
+		}
+
+	}
+
+	title = "shall_we_convert"
+	desc = "shall_we_convert"
+
+	option = {
+		name = "shall_we_convert"
+		random_list = {
+			55 = { 
+				religion = christianity
+				civilzation_value = 35
+			}
+			45 = { create_revolt = 10 }	
+		}	
+	}
+	
+}
+
+province_event = {
+
+	id = 20142
+	
+	trigger = {
+		year = 757	
+		is_religion_enabled = christianity	
+		any_neighbor_province = { religion = christianity }
+		OR = {
+			religion = tengriism
+			religion = arabian_folk
+			religion = brahmanism
+			religion = buddhism
+			religion = chinese_folk
+			religion = korean_folk
+			religion = japanese_folk
+			religion = viet_folk
+			religion = jainism
+		}
+		NOT = {
+			owner = { religion = christianity }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		
+		modifier = {
+			factor = 0.5
+			owner = { war = no }	
+		}
+		modifier = {
+			factor = 0.33
+			governor_scope = { character_religion = christianity }	
+		}
+		
+	}
+
+	title = "shall_we_convert"
+	desc = "shall_we_convert"
+
+	option = {
+		name = "shall_we_convert"
+		random = {
+			chance = 15 
+			religion = christianity		
+		}	
+	}
+	
+}
+
+province_event = {
+
+	id = 20143
+	
+	trigger = {
+		year = 757
+		is_religion_enabled = christianity	
+		any_neighbor_province = { religion = christianity }
+		OR = {
+			religion = african_folk
+			religion = zoroaster
+			religion = judaism
+			religion = animism
+		}	
+		NOT = {
+			owner = { religion = christianity }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+		
+		modifier = {
+			factor = 0.25
+			owner = { war = no }	
+		}
+		modifier = {
+			factor = 0.33
+			governor_scope = { character_religion = christianity }	
+		}
+
+	}
+
+	title = "shall_we_convert"
+	desc = "shall_we_convert"
+
+	option = {
+		name = "shall_we_convert"
+		random = {
+			chance = 20 
+			religion = christianity		
+		}	
+	}
+	
+}
+
+country_event = {
+
+	id = 20144
+	
+	trigger = {
+		year = 770
+		NOT = { government = theocracy }
+		capital_scope = { religion = christianity }
+		OR = {
+			religion = greek_pantheon
+			religion = roman_pantheon
+			religion = druidism
+			religion = shamanism
+			religion = carthaginian_pantheon
+			religion = phoenician_pantheon
+			religion = egyptian_pantheon
+		}
+		
+	}	
+
+	mean_time_to_happen = {
+		months = 24
+	}	
+	
+	title = "conversion"
+	desc = "conversion"
+
+	option = {
+		name = "conversion"	
+		random = {
+			chance = 15	
+			religion = christianity
+			ruler = { character_religion = christianity }
+			country_event = 20202	
+			country_event = 20113
+			country_event = 20167		
+		}	
+	}
+}
+
+country_event = {
+
+	id = 20145
+	
+	trigger = {
+		year = 780
+		NOT = { government = theocracy }
+		capital_scope = { religion = christianity }
+		OR = {
+			religion = tengriism
+			religion = arabian_folk
+			religion = brahmanism
+			religion = buddhism
+			religion = chinese_folk
+			religion = korean_folk
+			religion = japanese_folk
+			religion = viet_folk
+			religion = jainism
+		}	
+	}	
+
+	mean_time_to_happen = {
+		months = 36
+	}	
+	
+	title = "conversion"
+	desc = "conversion"
+
+	option = {
+		name = "conversion"	
+		random = {
+			chance = 15	
+			religion = christianity
+			ruler = { character_religion = christianity }
+			country_event = 20202	
+			country_event = 20113
+			country_event = 20167
+					
+		}	
+	}
+}
+
+country_event = {
+
+	id = 20146
+	
+	trigger = {
+		year = 770
+		NOT = { government = theocracy }
+		capital_scope = { religion = christianity }
+		OR = {
+			religion = african_folk
+			religion = zoroaster
+			religion = judaism
+			religion = animism
+		}	
+	}	
+
+	mean_time_to_happen = {
+		months = 24
+	}	
+	
+	title = "conversion"
+	desc = "conversion"
+
+	option = {
+		name = "conversion"	
+		random = {
+			chance = 10	
+			religion = christianity
+			ruler = { character_religion = christianity }
+			country_event = 20202	
+			country_event = 20113
+			country_event = 20167
+					
+		}	
+	}
+}
+
+country_event = {
+
+	id = 20147
+	
+	trigger = {
+		year = 760
+		NOT = { government = theocracy }
+		capital_scope = { religion = christianity }
+		OR = {
+			religion = greek_pantheon
+			religion = roman_pantheon
+			religion = druidism
+			religion = shamanism
+			religion = carthaginian_pantheon
+			religion = phoenician_pantheon
+			religion = egyptian_pantheon
+		}	
+	}	
+
+	mean_time_to_happen = {
+		months = 24
+	}	
+	
+	title = "conversion"
+	desc = "conversion"
+
+	option = {
+		name = "conversion"	
+		random = {
+			chance = 25
+			religion = christianity
+			ruler = { character_religion = christianity }
+			country_event = 20202	
+			country_event = 20113
+			country_event = 20167					
+		}	
+	}
+}
+
+country_event = {
+
+	id = 20148
+	
+	trigger = {
+		year = 760
+		NOT = { government = theocracy }
+		capital_scope = { religion = christianity }
+		OR = {
+			religion = tengriism
+			religion = arabian_folk
+			religion = brahmanism
+			religion = buddhism
+			religion = chinese_folk
+			religion = korean_folk
+			religion = japanese_folk
+			religion = viet_folk
+			religion = jainism
+		}	
+	}	
+
+	mean_time_to_happen = {
+		months = 36
+	}	
+	
+	title = "conversion"
+	desc = "conversion"
+
+	option = {
+		name = "conversion"	
+		random = {
+			chance = 10	
+			religion = christianity
+			ruler = { character_religion = christianity }
+			country_event = 20202	
+			country_event = 20113
+			country_event = 20167		
+		} 	
+	}
+}
+
+country_event = {
+
+	id = 20149
+	
+	trigger = {
+		year = 760
+		NOT = { government = theocracy }
+		capital_scope = { religion = christianity }
+		OR = {
+			religion = african_folk
+			religion = zoroaster
+			religion = judaism
+			religion = animism
+		}	
+	}	
+
+	mean_time_to_happen = {
+		months = 12
+	}	
+	
+	title = "conversion"
+	desc = "conversion"
+
+	option = {
+		name = "conversion"	
+		random = {
+			chance = 15	
+			religion = christianity
+			ruler = { character_religion = christianity }
+			country_event = 20202	
+			country_event = 20113
+			country_event = 20167		
+		} 		
+	}
+}
+
+country_event = {
+
+	id = 20150
+	
+	trigger = {
+		year = 754
+		OR = {
+			religion = greek_pantheon
+			religion = roman_pantheon
+			religion = druidism
+			religion = shamanism
+			religion = carthaginian_pantheon
+			religion = phoenician_pantheon
+			religion = egyptian_pantheon
+		}
+		ruler = { character_religion = christianity }
+		NOT = { has_civil_war = yes }
+			
+	}	
+
+	mean_time_to_happen = {
+		months = 6
+	}	
+	
+	title = "conversion"
+	desc = "conversion"
+
+	option = {
+		name = "conversion"	
+		random_list = {
+			70 = { 
+				random_character = {
+				limit = {
+					is_female = no
+					is_ruler = no
+					is_governor = yes
+					location = { 
+						owned_by = THIS 
+						controlled_by = THIS
+					}
+					NOT = { character_religion = christianity }
+				}
+				start_civil_war = yes
+				set_character_flag = rebel_side
+				character_event = 9006
+				}
+			}
+			30 = {
+				religion = christianity
+				capital_scope = { 
+					religion = christianity
+					civilzation_value = 35
+				}
+			}			
+		}	
+	}
+}
+
+country_event = {
+
+	id = 20151
+	
+	trigger = {
+		year = 754
+		OR = {
+			religion = tengriism
+			religion = arabian_folk
+			religion = brahmanism
+			religion = buddhism
+			religion = chinese_folk
+			religion = korean_folk
+			religion = japanese_folk
+			religion = viet_folk
+			religion = jainism
+		}
+		ruler = { character_religion = christianity }
+		NOT = { has_civil_war = yes }
+			
+	}	
+
+	mean_time_to_happen = {
+		months = 3
+	}	
+	
+	title = "conversion"
+	desc = "conversion"
+
+	option = {
+		name = "conversion"	
+		random_list = {
+			80 = { 
+				random_character = {
+				limit = {
+					is_female = no
+					is_ruler = no
+					is_governor = yes
+					location = { 
+						owned_by = THIS 
+						controlled_by = THIS
+					}
+					NOT = { character_religion = christianity }
+				}
+				start_civil_war = yes
+				set_character_flag = rebel_side
+				character_event = 9006
+				}
+			}	
+			20 = {
+				religion = christianity
+				capital_scope = { 
+					religion = christianity
+					civilzation_value = 35
+				}
+			}		
+		} 		
+	}
+}
+
+country_event = {
+
+	id = 20152
+	
+	trigger = {
+		year = 754
+		OR = {
+			religion = african_folk
+			religion = zoroaster
+			religion = judaism
+			religion = animism
+		}
+		ruler = { character_religion = christianity }
+		NOT = { has_civil_war = yes }
+			
+	}	
+
+	mean_time_to_happen = {
+		months = 6
+	}	
+	
+	title = "conversion"
+	desc = "conversion"
+
+	option = {
+		name = "conversion"	
+		random_list = {
+			70 = { 
+				random_character = {
+				limit = {
+					is_female = no
+					is_ruler = no
+					is_governor = yes
+					location = { 
+						owned_by = THIS 
+						controlled_by = THIS
+					}
+					NOT = { character_religion = christianity }
+				}
+				start_civil_war = yes
+				set_character_flag = rebel_side
+				character_event = 9006
+				}
+			}	
+			30 = {
+				religion = christianity
+				capital_scope = { 
+					religion = christianity
+					civilzation_value = 35
+				}
+			}	
+		}
+	}
+}
+
+province_event = {
+
+	id = 20153
+	
+	trigger = {
+		year = 754	
+		province_id = 448
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 80
+	}
+	
+}
+
+country_event = {
+	
+	id = 20167
+	
+	is_triggered_only = yes
+	
+	title = "provinces around capital convert"
+	
+	desc = "provinces around capital convert"
+	
+	option = {
+		name = "provinces around capital convert"
+		any_owned = {
+			limit = {
+				NOT = { religion = christianity }
+				any_neighbor_province = {
+					owned_by = THIS
+					is_capital = yes
+				}
+			}
+			random = {
+				chance = 40
+				religion = christianity
+				civilzation_value = 35
+			}
+		}
+	}
+}
+
+province_event = {
+
+	id = 20177
+	
+	trigger = {
+		year = 754	
+		province_id = 701
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20178
+	
+	trigger = {
+		year = 754	
+		province_id = 91
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20179
+	
+	trigger = {
+		year = 754	
+		province_id = 226
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20180
+	
+	trigger = {
+		year = 754	
+		province_id = 522
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20181
+	
+	trigger = {
+		year = 754	
+		province_id = 149
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20182
+	
+	trigger = {
+		year = 754	
+		province_id = 150
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20183
+	
+	trigger = {
+		year = 754	
+		province_id = 8
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+province_event = {
+
+	id = 20184
+	
+	trigger = {
+		year = 754	
+		province_id = 7
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+country_event = {
+	
+	id = 20202
+	
+	is_triggered_only = yes
+	
+	title = "state conversion to christianity"
+	
+	desc = "state conversion to christianity"
+	
+	option = {
+		name = "state conversion to christianity"
+		religion = christianity
+		ruler = { character_religion = christianity }
+		capital_scope = { 
+			religion = christianity 
+		}
+	}
+}
+
+country_event = {
+
+	id = 20071
+	
+	trigger = {
+		year = 754	
+		any_owned = {
+			religion = christianity
+		}
+		any_character = {
+			age = 16
+			NOT = { character_religion = christianity }
+		}
+
+	}
+
+	mean_time_to_happen = {
+		months = 12
+		
+		modifier = {
+			factor = 0.25
+			ruler = { character_religion = christianity } 
+		}
+
+		modifier = {
+			factor = 0.25
+			religion = christianity 
+		}
+		
+		modifier = {
+			factor = 2.0
+			NOT = { religion = christianity } 
+			government = theocracy 
+		}
+	}
+
+	title = "christianity"
+	desc = "christianity"
+
+	option = {
+		name = "christianity"
+		random = {
+			chance = 75
+			random_character = {
+				limit = {
+					age = 16
+					NOT = { character_religion = christianity }
+				}
+				character_religion = christianity
+			}
+		}
+	}
+}
+
+country_event = {
+
+	id = 20204
+	
+	is_triggered_only = yes
+
+	title = "school children in the faith"
+	desc = "school children in the faith"
+
+	option = {
+		name = "school children in the faith"
+		any_character = {
+			limit = {
+				age = 10
+				NOT = { age = 16 }
+				NOT = { character_religion = christianity }
+			}
+			character_religion = christianity
+
+		}
+	}
+}
+
+province_event = {
+
+	id = 20205
+	
+	trigger = {
+		owner = {
+			religion = christianity
+		}
+		religion = christianity
+		any_neighbor_province = {
+			not = { owned_by = this }
+			not = { is_core = this }
+			NOT = { owner = { religion = christianity } }
+			religion = christianity
+		}
+	}	
+
+	mean_time_to_happen = {
+		months = 1
+	}	
+	
+	title = "its ours"
+	desc = "its ours"
+
+	option = {
+		name = "its ours"	
+		random_neighbor_province = {
+			limit = {
+				not = { owned_by = this }
+				not = { is_core = this }
+				NOT = { owner = { religion = christianity } }
+				religion = christianity
+			}
+			add_core = this
+			owner = {
+				casus_belli = this
+				relation = { who = this value = -30 }
+			}
+		}	
+	}
+}
+
+country_event = {
+
+	id = 20210
+
+	is_triggered_only = yes
+
+	title = "non_theocracies_have_recieved_missionaries"
+
+	desc = "non_theocracies_have_recieved_missionaries"
+
+	option = {
+		name = "non_theocracies_have_recieved_missionaries"					# What are we waiting for?
+		random_list = {
+			40 = { country_event = 20207 }
+			25 = { country_event = 20206 }			
+			20 = { country_event = 20208 }
+			15 = { country_event = 20209 }
+		}
+	}
+}
+
+country_event = {
+
+	id = 20206
+
+	is_triggered_only = yes
+
+	title = "random_character_converts"
+
+	desc = "random_character_converts"
+
+	option = {
+		name = "random_character_converts"					# What are we waiting for?
+		random_character = {
+			limit = {
+				NOT = { character_religion = christianity }
+			}
+			character_religion = christianity
+		}
+	}
+}
+
+country_event = {
+
+	id = 20207
+
+	is_triggered_only = yes
+
+	title = "random_province_converts"
+
+	desc = "random_province_converts"
+
+	option = {
+		name = "random_province_converts"					# What are we waiting for?
+		random_owned = {
+			limit = {
+				NOT = { religion = christianity }
+			}
+			religion = christianity
+		}
+	}
+}
+
+country_event = {
+
+	id = 20208
+
+	is_triggered_only = yes
+
+	title = "ruler_converts"
+
+	desc = "ruler_converts"
+
+	option = {
+		name = "ruler_converts"					# What are we waiting for?
+		ruler = { character_religion = christianity }
+	}
+}
+
+country_event = {
+
+	id = 20209
+
+	is_triggered_only = yes
+
+	title = "nation_converts"
+
+	desc = "nation_converts"
+
+	option = {
+		name = "nation_converts"					# What are we waiting for?
+		religion = christianity
+		ruler = { character_religion = christianity }
+		country_event = 20202	
+		country_event = 20113
+		country_event = 20167
+	}
+}
+
+country_event = {
+
+	id = 20211
+
+	is_triggered_only = yes
+
+	title = "missionary_activity"
+
+	desc = "missionary_activity"
+
+	option = {
+		name = "send_missions_to_allies"					# What are we waiting for?
+		add_country_modifier = {
+			name = "missionary_activity"
+			duration = 365 
+		}
+		any_country = {
+			limit = {
+				ai = yes
+				alliance_with = THIS
+				NOT = { religion = christianity }
+				NOT = { government = theocracy }
+			}
+			country_event = 20210
+		}
+		any_country = {
+			limit = {
+				ai = yes
+				alliance_with = THIS
+				government = theocracy
+				NOT = { religion = christianity }				
+			}
+			country_event = 20381
+		}
+	}
+	option = {
+		name = "send_missions_to_borders"					# What are we waiting for?
+		add_country_modifier = {
+			name = "missionary_activity"
+			duration = 365 
+		}
+		any_neighbor_country = {
+			limit = {
+				NOT = { religion = christianity }
+			}
+			country_event = 20232
+		}
+	}
+	option = {
+		name = "send_missions_to_our_people"					# What are we waiting for?
+		add_country_modifier = {
+			name = "missionary_activity"
+			duration = 365 
+		}
+		any_owned = {
+			limit = {
+				NOT = { religion = christianity }
+			}
+			random_list = {
+				50 = { create_revolt = 10 }
+				50 = { province_event = 20231 }
+			}
+		}
+		any_character = {
+			limit = {
+				age = 35
+				NOT = { 
+					OR = {
+						character_religion = christianity 
+						character_religion = judaism 
+					}
+				}	
+			}
+			character_religion = christianity
+		}
+		
+	}
+}
+
+country_event = {
+
+	id = 20230
+	
+	trigger = {
+		religion = christianity	
+		any_character = {
+			age = 16	
+			NOT = { 
+				OR = {
+					character_religion = christianity 
+					character_religion = judaism
+				}
+			}	
+		}	
+	}	
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	title = "converts_to_state_religion"
+	
+	desc = "converts_to_state_religion"
+	
+	option = {
+		name = "converts_to_state_religion"	
+		random_character = {
+			limit = {
+				age = 16
+				NOT = { 
+					OR = {
+						character_religion = christianity 
+						character_religion = judaism 
+					}
+				}	
+			}
+			character_religion = christianity
+		}
+	}	
+
+}
+
+province_event = {
+
+	id = 20231
+	
+	is_triggered_only = yes
+
+	title = "active_missionaries"
+	
+	desc = "active_missionaries"
+	
+	option = {
+		name = "active_missionaries"	
+		random = {
+			chance = 50
+			religion = christianity
+		}
+	}	
+
+}
+
+country_event = {
+
+	id = 20232
+	
+	is_triggered_only = yes
+
+	title = "active_missionaries"
+	
+	desc = "active_missionaries"
+	
+	option = {
+		name = "active_missionaries"	
+		random_owned = {
+			limit = {
+				NOT = { religion = christianity }	
+			}
+			random = {
+				chance = 50
+				religion = christianity
+			}
+		}	
+	}
+}
+
+country_event = {
+
+	id = 20233
+	
+	trigger = {
+		year = 754	
+		religion = christianity
+		any_character = {
+			age = 20
+			OR = {
+				has_job = yes
+				is_female = yes
+				any_character = {
+					family = THIS
+					character_religion = christianity
+				}
+			}
+			NOT = { character_religion = christianity }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	title = "christianity"
+	desc = "christianity"
+
+	option = {
+		name = "christianity"
+		any_character = {
+			limit = {
+				age = 20
+				OR = {
+					has_job = yes
+					is_female = yes
+					any_character = {
+						family = THIS
+						character_religion = christianity
+					}
+				}
+				NOT = { character_religion = christianity }
+			}
+			character_religion = christianity
+		}
+	}
+}
+
+country_event = {
+
+	id = 20235
+
+	trigger = {
+		year = 754	
+		religion = christianity
+		has_law = crusader_nation
+		NOT = { has_country_modifier = church_militant }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	title = "church_militant"
+
+	desc = "church_militant"
+
+	option = {
+		name = "church_militant"					# What are we waiting for?
+		add_country_modifier = {
+			name = "church_militant"
+			duration = 980000 
+		}
+	}
+}
+
+province_event = {
+
+	id = 20279
+	
+	trigger = {		
+		NOT = { religion = christianity }
+		NOT = { any_neighbor_province = { religion = christianity } }
+		owner = { religion = christianity }
+		owner = { has_law = missionary_class }	
+	}
+
+	mean_time_to_happen = {
+		months = 12
+		
+		modifier = {
+			factor = 0.5
+			owner = { war = no }	
+		}
+		modifier = {
+			factor = 0.33
+			governor_scope = { character_religion = christianity }	
+		}
+		modifier = {
+			factor = 0.165
+			governor_scope = { character_religion = christianity }	
+			owner = { war = no }
+		}
+
+	}
+
+	title = "shall_we_convert"
+	desc = "shall_we_convert"
+
+	option = {
+		name = "shall_we_convert"
+		random_list = {
+			55 = { 
+				religion = christianity
+			}
+			45 = { create_revolt = 10 }	
+		}	
+	}
+	
+}
+
+province_event = {
+
+	id = 20281
+	
+	trigger = {
+		NOT = { religion = christianity }
+		NOT = { any_neighbor_province = { religion = christianity } }
+		owner = { religion = christianity }
+		owner = { has_law = missionary_class }
+		owner = { treasury = 1000 }
+	}
+
+	mean_time_to_happen = {
+		months = 12
+		
+		modifier = {
+			factor = 0.5
+			owner = { war = no }	
+		}
+		modifier = {
+			factor = 0.33
+			governor_scope = { character_religion = christianity }	
+		}
+		modifier = {
+			factor = 0.165
+			governor_scope = { character_religion = christianity }	
+			owner = { war = no }
+		}
+
+	}
+
+	title = "shall_we_convert"
+	desc = "shall_we_convert"
+
+	option = {
+		name = "shall_we_convert"
+		random_list = {
+			55 = { 
+				religion = christianity
+				civilzation_value = 35
+			}
+			45 = { create_revolt = 10 }	
+		}
+		owner = { treasury = -1000}
+	}
+	
+	option = {
+		name = "we_can_wait"
+		owner = { treasury = 10}
+	}
+	
+}
+
+country_event = {
+
+	id = 20282
+
+	is_triggered_only = yes
+
+	title = "missionary_in_capital"
+
+	desc = "missionary_in_capital"
+
+	option = {
+		name = "missionary_in_capital"					# What are we waiting for?
+		add_country_modifier = {
+			name = "christian_missionaries"
+			duration = 180 
+		}
+		capital_scope = {
+			random = {
+				chance = 45
+				religion = christianity
+			}
+		
+		}
+	}
+}
+
+province_event = {
+
+	id = 20380
+	
+	trigger = {
+		year = 754	
+		province_id = 187
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+country_event = {
+
+	id = 20381
+
+	is_triggered_only = yes
+
+	title = "theocracies_have_recieved_missionaries"
+
+	desc = "theocracies_have_recieved_missionaries"
+
+	option = {
+		name = "theocracies_have_recieved_missionaries"					# What are we waiting for?
+		random_list = {
+			75 = { country_event = 20207 }
+			25 = { country_event = 20206 }			
+		}
+	}
+}
+
+country_event = {
+
+	id = 20382
+
+	trigger = {
+		NOT = {
+			religion_group = hellenistic_pantheon
+			religion_group = semitic_pantheon
+			religion_group = paganism
+			religion_group = monotheism
+			religion_group = eastern
+		}
+		capital_scope = { religion = christianity }
+	}
+
+	mean_time_to_happen = {
+		months = 0.00001
+	}
+
+	title = "EVTNAME99002"
+	desc = "EVTDESC99002"
+
+	option = {
+		name = "EVTOPTA99002"
+			religion = christianity
+	}
+}
+
+province_event = {
+
+	id = 20408
+	
+	trigger = {
+		year = 754	
+		province_id = 45
+		NOT = { religion = christianity }
+
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "we_convert"
+	desc = "we_convert"
+
+	option = {
+		name = "we_convert"	
+		religion = christianity
+		civilzation_value = 35
+	}
+	
+}
+
+
+country_event = {
+
+	id = 20239
+
+	is_triggered_only = yes
+
+	title = "antiochan"
+
+	desc = "antiochan"
+
+	option = {
+		name = "we_are_antiochan"					# What are we waiting for?
+		add_country_modifier = {
+			name = "we_are_antiochan"
+			duration = 1000095 
+		}			
+	}
+}
+
+province_event = {
+
+	id = 20546
+	
+	trigger = {
+		year = 758
+		owner = {
+			ai = no
+			NOT = { religion = christianity }
+		}
+		NOT = { is_capital = yes }
+		any_neighbor_province = {
+			religion = christianity
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+		
+		modifier = {
+			factor = 0.5
+			owner = { war = no }	
+		}
+		modifier = {
+			factor = 0.33
+			governor_scope = { character_religion = christianity }	
+		}
+		modifier = {
+			factor = 0.165
+			governor_scope = { character_religion = christianity }	
+			owner = { war = no }
+		}
+
+	}
+
+	title = "christians_have_appeared"
+	
+	desc = "christians_have_appeared"
+
+	option = {
+		name = "preaching"
+		random = {
+			chance = 49
+			religion = christianity
+		}
+	}
+	
+
+	
+}
+
+province_event = {
+
+	id = 20563
+	
+	trigger = {
+		year = 758
+		owner = {
+			ai = no
+			NOT = { religion = christianity }
+		}
+		NOT = { is_capital = yes }
+		any_country = {
+			religion = christianity
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 18
+		
+		modifier = {
+			factor = 0.5
+			owner = { war = no }	
+		}
+		modifier = {
+			factor = 0.33
+			governor_scope = { character_religion = christianity }	
+		}
+		modifier = {
+			factor = 0.165
+			governor_scope = { character_religion = christianity }	
+			owner = { war = no }
+		}
+
+	}
+
+	title = "christians_have_appeared"
+	
+	desc = "christians_have_appeared"
+
+	option = {
+		name = "preaching"
+		random = {
+			chance = 45
+			religion = christianity
+		}
+	}
+	
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1005 @@
+laws = {
+
+	political_class = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+			NOT = {	government = theocracy }
+		}
+		allow = {
+			ruler = {
+				NOT = { party = religious_party }
+			}
+			stability = 1		
+		}
+		effect = {
+			stability = -2
+		}
+		
+		revoke_allowed = {
+			OR = {			
+				ruler = { party = religious_party }
+
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		omen_power = -0.15
+		omen_failure_penalty = 0.15
+		global_revolt_risk = -3
+		build_cost = 0.20
+		global_tax_modifier = 0.15
+
+		 
+		ai_will_do = {
+			factor = 0.75
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+
+	religious_class = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+		}
+		allow = {
+			OR ={
+				government = theocracy
+				ruler = {
+					party = religious_party
+				}
+				any_character = {
+					has_title = title_religious_tech
+					party = religious_party
+					charisma = 40
+					finesse = 40
+				}
+			}	
+			stability = 1		
+		}
+		effect = {
+			stability = -2
+		}
+		
+		revoke_allowed = {
+			OR = {			
+				ruler = { party = religious_party }
+
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		omen_power = 1.15
+		omen_failure_penalty = 0.45
+		global_revolt_risk = -2
+
+		 
+		ai_will_do = {
+			factor = 0.50
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	missionary_class = {
+		potential = {
+			religion = christianity
+		}
+		allow = {
+			OR = {
+				ruler = { 
+					party = religious_party
+					character_religion = christianity
+				}
+				any_character = {
+					has_title = title_religious_tech
+					character_religion = christianity
+					charisma = 35
+				}
+				any_character = {
+					has_title = title_censor
+					character_religion = christianity
+					finesse = 35
+				}		
+			}
+			stability = 1		
+		}
+		effect = {
+			stability = -1
+		}
+		
+		revoke_allowed = {
+			OR = {			
+				ruler = { party = religious_party }
+
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		omen_power = 1.15
+		omen_failure_penalty = 0.05
+		global_revolt_risk = -2
+
+		 
+		ai_will_do = {
+			factor = 0.90
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	emperial_focus = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+		}
+		allow = {
+			num_of_cities = 60
+			OR = {
+				ruler = { party = military_party }
+				any_character = {
+					party = military_party
+					has_title = title_censor
+					martial = 40
+				}
+			}
+			OR = {
+				any_character = {
+					party = military_party
+					has_title = title_naval_tech
+					martial = 40
+				}
+				any_character = {
+					party = military_party
+					has_title = title_land_tech
+					martial = 40
+				}
+			}
+			NOT = { has_law = internal_focus}
+			stability = 1			
+		}
+		effect = {
+			stability = -2
+		}
+		
+		revoke_allowed = {
+			OR = {		
+				ruler = { party = populist_party }
+				ruler = { party = civic_party }
+				ruler = { party = mercantile_party }
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		global_manpower_modifier = 0.15
+		global_tax_modifier = 0.10
+		diplomatic_missions = 0.20
+		intrigue_missions = 0.25
+		trade_income_modifier = -0.05
+		land_tech_cost_modifier = -0.15
+		naval_tech_cost_modifier = -0.15
+		global_revolt_risk = 3
+		 
+		ai_will_do = {
+			factor = 0.50
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}	
+	
+	internal_focus = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+		}
+		allow = {
+			OR = {		
+				ruler = { party = populist_party }
+				ruler = { party = civic_party }
+				ruler = { party = mercantile_party }
+				any_character = {
+					party = populist_party
+					has_title = title_land_tech
+					charisma = 40
+				}
+			}
+			NOT = { has_law = emperial_focus }
+			stability = 1			
+		}
+		effect = {
+			stability = -2
+		}
+		
+		revoke_allowed = {
+			OR = {
+				ruler = { party = military_party }
+				ruler = { party = mercantile_party }
+				any_character = {
+					party = military_party
+					has_title = title_censor
+					martial = 40
+				}
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		global_manpower_modifier = -0.75
+		global_tax_modifier = 0.50
+		diplomatic_missions = -0.25
+		intrigue_missions = -0.25
+		trade_income_modifier = 0.45
+		global_revolt_risk = -8
+		global_population_growth = 0.05
+		civic_tech_cost_modifier = -0.20
+		construction_tech_cost_modifier = -0.20
+		build_time = -0.20
+		 
+		ai_will_do = {
+			factor = 0.50
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+
+	open_markets = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+		}
+		allow = {
+			OR = {		
+				ruler = { party = populist_party }
+				ruler = { party = civic_party }
+				ruler = { party = mercantile_party }
+			}
+			NOT = { has_law = protect_our_markets }
+			NOT = { has_law = regulated_markets }
+			stability = 1			
+		}
+		effect = {
+			stability = -2
+		}
+		
+		revoke_allowed = {
+			OR = {
+				government = theocracy
+				ruler = { party = military_party }
+				ruler = { party = religious_party }
+				any_character = {
+					party = civic_party
+					has_title = title_censor
+					finesse = 40
+				}
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		global_tax_modifier = 0.30
+		diplomatic_missions = 0.15
+		intrigue_missions = 0.25
+		trade_income_modifier = 0.45
+		technology_cost = -0.15
+		global_revolt_risk = 5
+		build_cost = 0.15
+		 
+		ai_will_do = {
+			factor = 0.50
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	protect_our_markets = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+		}
+		allow = {
+			OR = {
+				government = theocracy
+				ruler = { party = military_party }
+				ruler = { party = religious_party }
+			}
+			NOT = { has_law = open_markets }
+			NOT = { has_law = regulated_markets }
+			stability = 1			
+		}
+		effect = {
+			stability = -2
+		}
+		
+		revoke_allowed = {
+			OR = {
+				ruler = { party = mercantile_party }
+				ruler = { party = populist_party }
+				ruler = { party = civic_party }
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		global_tax_modifier = -0.10
+		diplomatic_missions = -0.03
+		intrigue_missions = -0.25
+		trade_income_modifier = -0.15
+		global_revolt_risk = -15
+		 
+		ai_will_do = {
+			factor = 0.50
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	crusader_nation = {
+		potential = {
+			religion = christianity
+		}
+		allow = {
+			has_law = missionary_class
+			OR = {
+				ruler = { 
+					character_religion = christianity
+					party = religious_party 
+				}
+				ruler = { 
+					character_religion = christianity
+					party = military_party 
+				}
+				any_character = {
+					has_title = title_censor
+					character_religion = christianity
+					charisma = 40
+					party = religious_party
+				}
+				any_character = {
+					has_title = title_religious_tech
+					character_religion = christianity
+					charisma = 40
+					party = religious_party
+				}
+			}
+			stability = 1		
+		}
+		effect = {
+			stability = -1
+		}
+		
+		revoke_allowed = {
+			ruler = { party = religious_party }
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		omen_power = 0.95
+		omen_failure_penalty = 0.05
+		global_revolt_risk = -2
+		heavy_infantry_cost = -0.25
+		archers_cost = -0.25
+		warelephant_cost = -0.25
+		calvary_cost = -0.25
+		militia_cost = -0.25
+		horse_archers_cost = -0.25
+		trireme_cost = -0.25
+		maintenance_cost = -0.15
+
+		 
+		ai_will_do = {
+			factor = 0.95
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	permit_militant_orders = {
+		potential = {
+			religion = christianity
+		}
+		allow = {
+			has_law = crusader_nation
+			has_country_modifier = church_militant
+			OR = {
+				ruler = { 
+					party = religious_party
+					character_religion = christianity
+				}
+				ruler = { 
+					party = military_party
+					character_religion = christianity
+				}
+				any_character = {
+					has_title = title_religious_tech
+					character_religion = christianity
+					martial = 40
+				}
+			}
+			stability = 1		
+		}
+		effect = {
+			stability = 3
+		}
+		
+		revoke_allowed = {
+			OR = {			
+				ruler = { party = religious_party }
+
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		global_manpower_modifier = 0.15
+
+		 
+		ai_will_do = {
+			factor = 0.80
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	regulated_markets = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+		}
+		allow = {
+			civic_tech = 45
+			NOT = { has_law = protect_our_markets }
+			NOT = { has_law = open_markets }
+			stability = 1			
+		}
+		effect = {
+			stability = -1
+		}
+		
+		revoke_allowed = {
+			OR = {
+				ruler = { party = military_party }
+				ruler = { party = religious_party }
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		global_tax_modifier = 0.25
+		trade_income_modifier = 0.35
+		technology_cost = -0.25
+		build_cost = -0.15
+		 
+		ai_will_do = {
+			factor = 0.70
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	create_diplomatic_schools = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+		}
+		allow = {
+			civic_tech = 48
+			NOT = { has_law = internal_focus }
+			stability = 1			
+		}
+		effect = {
+			stability = 1
+		}
+		
+		revoke_allowed = {
+			OR = {
+				ruler = { party = military_party }
+				ruler = { party = religious_party }
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		diplomatic_missions = 0.45
+		intrigue_missions = 0.45
+		 
+		ai_will_do = {
+			factor = 0.70
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	spy_schools = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+		}
+		allow = {
+			civic_tech = 46
+			NOT = { has_law = protect_our_markets }
+			NOT = { has_law = open_markets }
+			has_law = regulated_markets
+			stability = 1			
+		}
+		effect = {
+			stability = -1
+		}
+		
+		revoke_allowed = {
+			OR = {
+				ruler = { party = military_party }
+				ruler = { party = religious_party }
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		diplomatic_missions = 0.25
+		intrigue_missions = 0.25
+		 
+		ai_will_do = {
+			factor = 0.70
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	defence_of_marriage = {
+		potential = {
+			religion = christianity
+		}
+		allow = {
+			OR = {
+				ruler = { 
+					party = religious_party
+					character_religion = christianity
+				}
+				any_character = {
+					character_religion = christianity
+					has_title = title_censor 
+					finesse = 40
+				}
+				any_character = {
+					character_religion = christianity
+					has_title = title_religious_tech 
+					finesse = 40
+				}		
+				
+			}	
+			stability = 1		
+		}
+		effect = {
+			stability = -1
+		}
+		
+		revoke_allowed = {
+			ruler = { party = religious_party }
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		omen_power = 0.25
+		omen_failure_penalty = 0.05
+		global_revolt_risk = -2
+		global_population_growth = 0.05
+
+		 
+		ai_will_do = {
+			factor = 0.60
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	mandatory_military_service = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+		}
+		allow = {
+			OR = {
+				ruler = { party = military_party }
+				any_character = {
+					has_title = title_censor
+					party = military_party
+					martial = 35
+				}
+				any_character = {
+					has_title = title_land_tech
+					party = military_party
+					martial = 40
+				}						
+				
+			}
+			stability = 1
+			NOT = { has_law = voluntary_military_service }			
+		}
+		effect = {
+			stability = -2
+		}
+		
+		revoke_allowed = {
+			OR = {
+				government = imperium_republic			
+				ruler = { party = populist_party }
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		global_manpower_modifier = 0.35
+		global_population_growth = -0.05
+		global_tax_modifier = -0.20
+		global_revolt_risk = 3
+		monthly_character_loyalty = -5.00
+		monthly_character_prominence = -0.20
+		 
+		ai_will_do = {
+			factor = 0.5
+		}
+		ai_will_revoke = {
+			factor = 0.5
+		}
+	}
+	
+	voluntary_military_service = {
+		potential = {
+			OR = {
+				government = republic
+				government = monarchy
+				government = tribal
+			}
+		}
+		allow = {
+			ruler = {
+				OR = {
+					party = mercantile_party
+					party = civic_party
+					party = populist_party
+				}
+			}
+			stability = 1
+			NOT = { has_law = mandatory_military_service }	
+		}
+			
+		effect = {
+			stability = 3
+		}
+		
+		revoke_allowed = {
+			OR = {
+				government = imperium_republic			
+				ruler = { party = military_party }
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		global_manpower_modifier = -0.35
+		global_population_growth = 0.05
+		global_tax_modifier = 0.10
+		global_revolt_risk = -5
+		monthly_character_loyalty = 10.00
+		monthly_character_prominence = 0.20
+		 
+		ai_will_do = {
+			factor = 0.5
+		}
+		ai_will_revoke = {
+			factor = 0.5
+		}
+	}
+	
+	local_government = {
+		potential = {
+			government = imperium_republic
+		}
+		allow = {
+			num_of_cities = 90	
+		}
+		effect = {
+			stability = 2
+		}
+		
+		revoke_allowed = {
+			government = imperium_republic			
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		global_manpower_modifier = -0.25
+		global_population_growth = 0.05
+		global_tax_modifier = -0.25
+		monthly_character_prominence = 0.20
+		build_cost = 0.50
+		build_time = -0.05
+		 
+		ai_will_do = {
+			factor = 0
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+	}
+	
+	local_armories_wharehouses_and_granaries = {
+		potential = {
+			government = imperium_republic
+		}
+		allow = {
+			num_of_cities = 125
+			OR = {
+				ruler = { party = military_party }
+				ruler = { party = mercantile_party }
+				any_character = {
+					party = military_party
+					has_title = title_censor
+					finesse = 40
+				}
+			}
+			has_law = emperial_focus
+			NOT = { has_law = internal_focus}
+			stability = 1			
+		}
+		effect = {
+			stability = 2
+		}
+		
+		revoke_allowed = {
+			OR = {		
+				ruler = { party = populist_party }
+				ruler = { party = civic_party }
+				ruler = { party = mercantile_party }
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		build_cost = -0.35
+		build_time = -0.15
+		heavy_infantry_cost = -0.45
+		archers_cost = -0.45
+		warelephant_cost = -0.45
+		calvary_cost = -0.45
+		militia_cost = -0.45
+		horse_archers_cost = -0.45
+		trireme_cost = -0.45
+		maintenance_cost = -0.45
+		 
+		ai_will_do = {
+			factor = 0.80
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+	
+	establish_states = {
+		potential = {
+			government = imperium_republic
+		}
+		allow = {
+			num_of_cities = 115
+			OR = {
+				ruler = { party = civic_party }
+				ruler = { party = mercantile_party }
+				any_character = {
+					party = military_party
+					has_title = title_censor
+					finesse = 40
+				}
+			}
+			has_country_flag = military_districts
+			NOT = { has_law = establish_states}
+			stability = 1			
+		}
+		effect = {
+			stability = 2
+		}
+		
+		revoke_allowed = {
+			OR = {		
+				ruler = { party = populist_party }
+				ruler = { party = civic_party }
+				ruler = { party = mercantile_party }
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		global_manpower_modifier = 0.10
+		global_tax_modifier = 0.025
+		 
+		ai_will_do = {
+			factor = 0.80
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+
+	establish_national_gaurd = {
+		potential = {
+			government = imperium_republic
+		}
+		allow = {
+			num_of_cities = 165
+			OR = {
+				ruler = { party = military_party }
+				any_character = {
+					party = military_party
+					has_title = title_censor
+					finesse = 40
+				}
+			}
+			has_country_flag = national_reserve
+			NOT = { has_law = establish_national_gaurd }
+			stability = 1			
+		}
+		effect = {
+			stability = 2
+		}
+		
+		revoke_allowed = {
+			OR = {		
+				ruler = { party = populist_party }
+				ruler = { party = civic_party }
+				ruler = { party = mercantile_party }
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		heavy_infantry_cost = -0.15
+		archers_cost = -0.15
+		warelephant_cost = -0.15
+		calvary_cost = -0.15
+		militia_cost = -0.15
+		horse_archers_cost = -0.15
+		trireme_cost = -0.15
+		maintenance_cost = -0.15
+		 
+		ai_will_do = {
+			factor = 0.80
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}
+
+	establish_civil_engineer_corps = {
+		potential = {
+			government = imperium_republic
+		}
+		allow = {
+			num_of_cities = 170
+			OR = {
+				ruler = { party = civic_party }
+				any_character = {
+					party = civic_party
+					has_title = title_censor
+					finesse = 40
+				}
+			}
+			has_country_flag = corps_of_engineers
+			NOT = { has_law = establish_civil_engineer_corps }
+			stability = 1			
+		}
+		effect = {
+			stability = 2
+		}
+		
+		revoke_allowed = {
+			OR = {		
+				ruler = { party = populist_party }
+				ruler = { party = civic_party }
+				ruler = { party = mercantile_party }
+			}
+		}
+		revoke_effect = {
+			stability = -1
+		}
+		
+		# Modifiers while in effect
+		build_cost = -0.10
+		build_time = -0.25
+		 
+		ai_will_do = {
+			factor = 0.80
+		}
+		ai_will_revoke = {
+			factor = 0.50
+		}
+	}	
+
+
+
+
+}
+
+
